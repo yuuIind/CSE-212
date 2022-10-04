@@ -25,10 +25,11 @@ public class ArrayTest {
 			}
 			else if(sysCommand== 2){
 				for(int i = 0; i < studentList.length; i++) {
-					if(studentList[i] != null) {
-						System.out.println("Student " + (i+1) +":");
-						studentList[i].displayInformation();
+					if(studentList[i] == null) {
+						break;
 					}
+					System.out.println("Student " + (i+1) +":");
+					studentList[i].displayInformation();
 				}
 			}
 			else if(sysCommand== 0){
