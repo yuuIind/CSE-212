@@ -5,15 +5,20 @@ public class PromotionTicket extends Ticket {
 	
 	public PromotionTicket(String audienceName, String seatNumber, Play play, String accessCode){
 		super(audienceName, seatNumber, play);
-		this.accessCode = accessCode;
+		setAccessCode(accessCode);
 	}
 	
 	public PromotionTicket(String audienceName, Play play, String accessCode) {
 		super(audienceName, "A" + getSeatN(), play);
-		this.accessCode = accessCode;
+		setAccessCode(accessCode);
 	}
 	
 	public void setAccessCode(String accessCode) {
+		if(accessCode.lenght < 4){
+			System.out.println("The access code that you entered is incorrect");
+			System.out.println("You will be charged with base ticket price");
+			this.accessCode = "def0";
+		}
 		this.accessCode = accessCode;
 	}
 	
