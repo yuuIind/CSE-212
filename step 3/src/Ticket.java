@@ -59,9 +59,11 @@ public class Ticket {
 		System.out.println(getAudienceName() 
 				+ " is going to " 
 				+ play.eventInfo() 
-				+ " with seat number" 
+				+ " with seat number " 
 				+ getSeatNumber() 
-				+ calculatedPrice());
+				+ " with a Base Ticket with the price of " 
+				+ calculatedPrice() 
+				+ " TL");
 	}
 	
 	public double calculatedPrice() {

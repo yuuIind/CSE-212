@@ -14,7 +14,7 @@ public class PromotionTicket extends Ticket {
 	}
 	
 	public void setAccessCode(String accessCode) {
-		if(accessCode.lenght() < 4){
+		if(accessCode.length() < 4){
 			System.out.println("The access code that you entered is incorrect");
 			System.out.println("You will be charged with base ticket price");
 			this.accessCode = "def0";
@@ -25,6 +25,17 @@ public class PromotionTicket extends Ticket {
 	public String getAccessCode() {
 		return accessCode;
 	}
+
+	public void displayTicket() {
+		System.out.println(getAudienceName() 
+				+ " is going to " 
+				+ getPlay().eventInfo() 
+				+ " with seat number " 
+				+ getSeatNumber() 
+				+ " with a Promotion Ticket with the price of " 
+				+ calculatedPrice() 
+				+ " TL");
+	}
 	
 	public double calculatedPrice() {
 		int discount = Character.getNumericValue(getAccessCode().charAt(3));
@@ -33,7 +44,7 @@ public class PromotionTicket extends Ticket {
 			discountPercent = 0;
 		}
 		else {
-			discountPercent = 1 - ((10*discount)/100);
+			discountPercent = 1 - ((double)(10*discount)/100);
 		}
 		return getBasePrice()*discountPercent;
 	}

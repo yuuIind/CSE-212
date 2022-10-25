@@ -20,6 +20,17 @@ public class PremiereTicket extends Ticket {
 		return priceModifier;
 	}
 	
+	public void displayTicket() {
+		System.out.println(getAudienceName() 
+				+ " is going to " 
+				+ getPlay().eventInfo() 
+				+ " with seat number " 
+				+ getSeatNumber() 
+				+ " with a Premiere Ticket with the price of " 
+				+ calculatedPrice() 
+				+ " TL");
+	}
+
 	public double calculatedPrice() {
 		return getBasePrice()*getPriceModifier();
 	}
