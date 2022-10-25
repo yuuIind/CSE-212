@@ -14,7 +14,7 @@ public class PromotionTicket extends Ticket {
 	}
 	
 	public void setAccessCode(String accessCode) {
-		if(accessCode.lenght < 4){
+		if(accessCode.lenght() < 4){
 			System.out.println("The access code that you entered is incorrect");
 			System.out.println("You will be charged with base ticket price");
 			this.accessCode = "def0";
